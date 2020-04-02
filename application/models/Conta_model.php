@@ -23,7 +23,9 @@ class Conta_model extends CI_Model {
     }
 
     public function salvar($dados){
-       // $this->db->query("insert into conta_bancaria (descricao, saldo) values ('poupança santander', 100)");
+        $descricao = $dados["descricao"];
+        $saldo = $dados['saldo'];
+        $this->db->query("insert into conta_bancaria (descricao, saldo) values ('$descricao', '$saldo')");
     }
 
     public function listar(){
@@ -33,11 +35,17 @@ class Conta_model extends CI_Model {
     }
 
     public function atualizar($id_conta, $dados){
+        $descricao = $dados["descricao"];
+        $saldo = $dados["saldo"];
+        return $this->db->query("update conta_bancaria
+                                 set descricao='$descricao',
+                                     saldo='$saldo'
+                                 where id_conta_bancaria ='$id_conta'");
 
     }
 
     public function deletar($id_conta){
-
+        return $this->db->query("delete from conta_bancaria where id_conta_bancaria = '$id_conta'");
     }
 
 
