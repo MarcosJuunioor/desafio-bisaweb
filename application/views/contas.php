@@ -22,7 +22,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <label for='id_saldo'>Saldo</label>
                         <input type='number' id='id_saldo' name='saldo' value=$saldo>
                         <input type='submit' value='atualizar'/>
-                        <a href='http://localhost/ci/desafio-bisa/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar'/></a><br>
+                        <a href='http://localhost/ci/desafio-bisa/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar'/></a>
+                        <a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/$id_conta'> <input type='button' value='movimentações' id='id_movimentacoes'/></a><br>
                     </form>
                     ";      
                     
