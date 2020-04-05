@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="http://localhost/ci/desafio-bisa/assets/css/contas.css">
 </head>
 <body>
-    <h1 class="titulo"><span class="badge badge-secondary">Lista de Contas Bancárias</span> </h1>
+    <h1 class="titulo"><span class="badge badge-primary">Lista de Contas Bancárias</span> </h1>
     <div>
         <?php 
             if(!empty($contas)){
@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <label for='id_saldo'>Saldo</label>
                                     <input type='number' id='id_saldo' name='saldo' value=$saldo required/>
 
-                                    <input type='submit' value='atualizar' class='btn btn-success'/>
+                                    <input type='submit' value='atualizar' class='btn btn-light'/>
                                     <a href='http://localhost/ci/desafio-bisa/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar' class='btn btn-danger'/></a>
                                     <a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/$id_conta'> <input type='button' value='movimentações' id='id_movimentacoes' class='btn btn-info'/></a><br>
                                 </div>
@@ -46,14 +46,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="forms"> 
             <form method="post" action="http://localhost/ci/desafio-bisa/index.php/conta_control/criar_conta">
                 <div class="form-row">
-                    <div class='col'>
-                        <label for="id_descricao">Descrição</label>
-                        <input type="text" id="id_descricao" name="descricao" required/>
-                
-                        <label for="id_saldo">Saldo</label>
-                        <input type="number" id="id_saldo" name="saldo" required/>
-                
-                        <input type="submit" value="cadastrar" class="btn btn-primary"/>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class='col'>
+                                <h3><span class="badge badge-success">NEW</span></h3>
+                                <label for="id_descricao">Descrição</label>
+                                <input type="text" id="id_descricao" name="descricao" required/>
+                        
+                                <label for="id_saldo">Saldo</label>
+                                <input type="number" id="id_saldo" name="saldo" required/>
+                        
+                                <input type="submit" value="cadastrar" class="btn btn-success"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
