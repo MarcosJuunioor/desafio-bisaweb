@@ -1,5 +1,5 @@
 # Desafio Bisaweb
-Trata-se de um desafio proposto pela empresa Bisaweb em sua seleção para estagiário. O mesmo consiste em desenvolver um sistema de gestão financeira com o uso do Codeigniter Framework.
+Este repositório possui o projeto criado para resolução de um desafio proposto pela empresa Bisaweb em sua seleção para estagiário. O desafio consiste em desenvolver um sistema de gestão financeira com o uso do Codeigniter Framework.
 
 ## Especificações e Funcionalidades
 A empresa definiu algumas especificações e funcionalidades, tais quais:
@@ -48,3 +48,5 @@ movimentações.
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 	);
+## Rodando o projeto
+Para executar o sistema, deve-se primeiramente usar um "git clone" para dentro de um servidor local com PHP e MySql instalados. Depois disso, devem ser feitas as alterações no projeto para trabalhar com as configurações do banco de dados da máquina (isso deve ser feito nos arquivos "Conta_model.php" e "Movimentacao_model.php"). Em seguida, basta abrir o browser e colocar o endereço http://localhost/ci/desafio-bisa/index.php/conta_control/listar_contas.
