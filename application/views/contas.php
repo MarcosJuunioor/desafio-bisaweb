@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="http://localhost/ci/desafio-bisa/assets/css/contas.css">
 </head>
 <body>
+    <div id="id_div_container">
     <h1 class="titulo"><span class="badge badge-primary">Lista de Contas Bancárias</span> </h1>
-    <div>
         <?php 
             if(!empty($contas)){
                 foreach($contas as $conta){
@@ -26,15 +26,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input type='text' id='id_descricao' name='descricao' value=$descricao required/>    
 
                                     <label for='id_saldo'>Saldo</label>
-                                    <input type='number' id='id_saldo' name='saldo' value=$saldo required/>
+                                    <input type='number' id='id_saldo' name='saldo' value=$saldo min='0' required/>
 
                                     <input type='submit' value='atualizar' class='btn btn-light'/>
-                                    <a href='http://localhost/ci/desafio-bisa/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar' class='btn btn-danger'/></a>
+                                    <a href='http://localhost/ci/desafio-bisa/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar' class='btn btn-danger'/></a>          
                                     <a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/$id_conta'> <input type='button' value='movimentações' id='id_movimentacoes' class='btn btn-info'/></a><br>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    
                     ";      
                     
                 }
@@ -54,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <input type="text" id="id_descricao" name="descricao" required/>
                         
                                 <label for="id_saldo">Saldo</label>
-                                <input type="number" id="id_saldo" name="saldo" required/>
+                                <input type="number" id="id_saldo" name="saldo" min="0" required/>
                         
                                 <input type="submit" value="cadastrar" class="btn btn-success"/>
                             </div>

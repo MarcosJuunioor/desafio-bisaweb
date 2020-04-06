@@ -9,23 +9,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="http://localhost/ci/desafio-bisa/assets/css/movimentacoes.css">
 </head>
 <body>
-    <h1 class="titulo"><span class="badge badge-secondary">Lista de movimentações</span></h1>
-    <?php 
+    <div id="id_div_container">
+    <h1 class='titulo'><span class='badge badge-secondary'>Lista de movimentações</span></h1>   
+    <?php  
         if(!empty($movimentacoes)){
+            $id_conta = $movimentacoes[0]->id_conta_bancaria;
+            echo "<a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/fazer_relatorio/$id_conta'><input type='button' value='RELATÓRIO' class='btn btn-link'/></a>";
             foreach($movimentacoes as $movimentacao){
                 $id_movimentacao = $movimentacao->id_movimentacao_financeira;
                 $descricao = $movimentacao->descricao;
                 $tipo_movimentacao = $movimentacao->tipo_movimentacao;
                 $valor=$movimentacao->valor;
                 $data=$movimentacao->data_da_movimentacao;
-                $id_conta=$movimentacao->id_conta_bancaria;
 
                 echo "
                 <form id='id_atualizacao_movimentacao' class='forms' method='post' action='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/atualizar_movimentacao/$id_movimentacao/$id_conta'>
                     <div class='form-row'>
                         <div class='col'>
                             <label for='id_descricao'>Descrição</label>
-                            <input type='text' id='id_descricao' name='descricao' value=$descricao required/>
+                            <select name='descricao' id='id_descricao' required>
+                                <option value=$descricao selected>$descricao</option>
+                                <option value='deposito'>depósito</option>
+                                <option value='saque'>saque</coption>
+                                <option value='transferencia'>transferência</coption>
+                            </select>
                             <label for='id_tipos_movimentacoes'>Tipo da Movimentação</label>
                             <select name='tipos_movimentacoes' id='id_tipos_movimentacoes' required>
                                 <option value=$tipo_movimentacao selected>$tipo_movimentacao</option>
@@ -33,9 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <option value='despesa'>despesa</coption>
                             </select>
                             <label for='id_valor'>Valor</label>
-                            <input type='number' id='id_valor' name='valor' value=$valor required>
-                            <label for='id_data_da_movimentacao'>Data</label>
-                            <input type='date' id='id_data_da_movimentacao' name='data_da_movimentacao' value=$data required>
+                            <input type='number' id='id_valor' name='valor' value=$valor step='0.01' min='0' required/>
+                            <label for='id_data_da_movimentacao_atualizacao'>Data</label>
+                            <input type='date' id='id_data_da_movimentacao_atualizacao' name='data_da_movimentacao' value=$data required>
                             <input type='submit' value='atualizar' class='btn btn-light'/>
                             <a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/excluir_movimentacao/$id_movimentacao/$id_conta'> <input type='button' value='deletar' id='id_deletar' class='btn btn-danger'/></a><br>                    
                         </div>
@@ -55,15 +62,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="card-body">
                     <div class='col'>
                         <h3><span class="badge badge-success">NEW</span></h3>
-                        <label for="id_descricao">Descrição</label>
-                        <input type="text" id="id_descricao" name="descricao" required/>
+                        <label for='id_descricao'>Descrição</label>
+                        <select name='descricao' id='id_descricao' required>
+                            <option value='deposito'>depósito</option>
+                            <option value='saque'>saque</coption>
+                            <option value='transferencia'>transferência</coption>
+                        </select>
                         <label for="id_tipo_movimentacao">Tipo da Movimentação</label>
                         <select id="id_tipo_movimentacao" name="tipos_movimentacoes" form="id_cadastro_movimentacao" required>
                             <option value="receita" >Receita</option>
                             <option value="despesa">Despesa</option>
                         </select>
                         <label for="id_valor">Valor</label>
-                        <input type="number" id="id_valor" name="valor" required/>
+                        <input type="number" id="id_valor" name="valor" min="0" step="0.01" required/>
                         <label for="id_data_da_movimentacao">Data</label>
                         <input type="date" id="id_data_da_movimentacao" name="data_da_movimentacao" required/>
                         <input type="submit" value="cadastrar" class="btn btn-success"/>
@@ -74,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>    
     </form>
 
-
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

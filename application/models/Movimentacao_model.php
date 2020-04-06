@@ -99,4 +99,9 @@ class Movimentacao_model extends CI_Model {
 
     }
 
+    public function listar_ordenado($id_conta){
+        $query = $this->db->query("select * from movimentacao_financeira where id_conta_bancaria = $id_conta order by tipo_movimentacao, data_da_movimentacao");
+        return $query->result();
+    }
+
 }
