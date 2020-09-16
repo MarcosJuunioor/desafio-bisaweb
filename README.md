@@ -23,7 +23,7 @@ movimentações.
 
 ## Banco de Dados
 ### Modelo Relacional
-![](https://github.com/MarcosJuunioor/desafio-bisaweb/blob/master/MR-desafio-bisa.png)
+![](https://github.com/MarcosJuunioor/desafio-bisawebweb/blob/master/MR-desafio-bisaweb.png)
 ### Script
 
 	create database banco;
@@ -49,4 +49,4 @@ movimentações.
 		ON UPDATE CASCADE
 	);
 ## Rodando o projeto
-Para executar o sistema, deve-se primeiramente usar um "git clone" para dentro de um servidor local com PHP e MySql instalados. Depois disso, devem ser feitas as alterações no projeto para trabalhar com as configurações do banco de dados da máquina (isso deve ser feito nos arquivos "Conta_model.php" e "Movimentacao_model.php"). Em seguida, basta abrir o browser e colocar o endereço http://localhost/desafio-bisa/index.php/conta_control/listar_contas.
+Para executar o sistema, deve-se primeiramente usar um "git clone" para dentro de um servidor local com PHP e MySql instalados. Depois disso, devem ser feitas as alterações no projeto para trabalhar com as configurações do banco de dados da máquina (isso deve ser feito nos arquivos "Conta_model.php" e "Movimentacao_model.php"). Em seguida, basta abrir o browser e colocar o endereço http://localhost/desafio-bisaweb/index.php/conta_control/listar_contas.

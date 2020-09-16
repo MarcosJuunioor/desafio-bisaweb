@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
     <title>Contas Bancárias</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/ci/desafio-bisa/assets/css/contas.css">
+    <link rel="stylesheet" href="http://localhost/desafio-bisaweb/assets/css/contas.css">
 </head>
 <body>
     <div id="id_div_container">
@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     $saldo = $conta->saldo;
                     echo "
                     <div class='forms'>
-                        <form method='post' action='http://localhost/ci/desafio-bisa/index.php/conta_control/atualizar_conta/$id_conta'>
+                        <form method='post' action='http://localhost/desafio-bisaweb/index.php/conta_control/atualizar_conta/$id_conta'>
                             <div class='form-row'>
                                 <div class='col'>
                                     <label for='id_descricao'>Descrição</label>
@@ -29,8 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input type='number' id='id_saldo' name='saldo' value=$saldo min='0' required/>
 
                                     <input type='submit' value='atualizar' class='btn btn-light'/>
-                                    <a href='http://localhost/ci/desafio-bisa/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar' class='btn btn-danger'/></a>          
-                                    <a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/$id_conta'> <input type='button' value='movimentações' id='id_movimentacoes' class='btn btn-info'/></a><br>
+                                    <a href='http://localhost/desafio-bisaweb/index.php/conta_control/excluir_conta/$id_conta'> <input type='button' value='deletar' id='id_deletar' class='btn btn-danger'/></a>          
+                                    <a href='http://localhost/desafio-bisaweb/index.php/movimentacao_control/listar_movimentacoes/$id_conta'> <input type='button' value='movimentações' id='id_movimentacoes' class='btn btn-info'/></a><br>
                                 </div>
                             </div>
                         </form>
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ?>
         
         <div class="forms"> 
-            <form method="post" action="http://localhost/ci/desafio-bisa/index.php/conta_control/criar_conta">
+            <form method="post" action="http://localhost/desafio-bisaweb/index.php/conta_control/criar_conta">
                 <div class="form-row">
                     <div class="card">
                         <div class="card-body">
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="http://localhost/ci/desafio-bisa/assets/javascript/contas.js"></script>
+    <script src="http://localhost/desafio-bisaweb/assets/javascript/contas.js"></script>
 </body>
 </html>
 

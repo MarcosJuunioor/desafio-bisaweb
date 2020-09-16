@@ -7,8 +7,8 @@ class Movimentacao_model extends CI_Model {
         parent::__construct();
 
         $config['hostname'] = '127.0.0.1';
-        $config['username'] = 'marcos';
-        $config['password'] = 'marcos123';
+        $config['username'] = 'root';
+        $config['password'] = '';
         $config['database'] = 'banco';
         $config['dbdriver'] = 'mysqli';
         $config['dbprefix'] = '';

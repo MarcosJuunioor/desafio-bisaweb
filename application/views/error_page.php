@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
     <title>error_page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/ci/desafio-bisa/assets/css/error_page.css">
+    <link rel="stylesheet" href="http://localhost/desafio-bisaweb/assets/css/error_page.css">
 </head>
 <body>
     <div class="alert alert-danger" role="alert">
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <?php
         
-        echo "<a href='http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/$id_conta'><button class='btn btn-light'>voltar</button></a>";
+        echo "<a href='http://localhost/desafio-bisaweb/index.php/movimentacao_control/listar_movimentacoes/$id_conta'><button class='btn btn-light'>voltar</button></a>";
     ?>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

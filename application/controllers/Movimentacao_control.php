@@ -13,7 +13,7 @@ class Movimentacao_control extends CI_Controller {
         $id_conta = $this->uri->segment(3);
         $id_conta_aux["id_conta"] = $id_conta;
         if($this->movimentacao->salvar($dados, $id_conta)){
-            header('Location: http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/'.$id_conta);
+            header('Location: http://localhost/desafio-bisaweb/index.php/movimentacao_control/listar_movimentacoes/'.$id_conta);
         }else{
             $this->load->view("error_page", $id_conta_aux);
         }
@@ -40,7 +40,7 @@ class Movimentacao_control extends CI_Controller {
         $id_conta = $this->uri->segment(4);
         $id_conta_aux["id_conta"] = $id_conta;
         if($this->movimentacao->deletar($id_movimentacao)){
-            header('Location: http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/'.$id_conta);
+            header('Location: http://localhost/desafio-bisaweb/index.php/movimentacao_control/listar_movimentacoes/'.$id_conta);
         }else{
             $this->load->view("error_page", $id_conta_aux);
         }
@@ -52,7 +52,7 @@ class Movimentacao_control extends CI_Controller {
         $id_conta_aux["id_conta"] = $id_conta;
         $dados = $this->input->post();
         if($this->movimentacao->atualizar($id_movimentacao, $dados, $id_conta)){
-            header('Location: http://localhost/ci/desafio-bisa/index.php/movimentacao_control/listar_movimentacoes/'.$id_conta);
+            header('Location: http://localhost/desafio-bisaweb/index.php/movimentacao_control/listar_movimentacoes/'.$id_conta);
         }else{
             $this->load->view("error_page", $id_conta_aux);
         }
